@@ -52,7 +52,7 @@ public class SynchronizedTutor1 {
             e.printStackTrace();
         }
         // Uncomment this to look how counter is changing
-        //System.out.println(buf);
+        System.out.println(buf);
         System.out.println("counter="+counter);
         assertTrue(counter==100000);
     }

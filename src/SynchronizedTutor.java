@@ -9,6 +9,7 @@ public class SynchronizedTutor {
     static StringBuffer buf = new StringBuffer();
     Integer counter = 0;
 
+
     static void log(String s) {
         buf.append(s+"\n");
     }
@@ -23,7 +24,9 @@ public class SynchronizedTutor {
         @Override
         public void run() {
             for (int i=0;i<1000;i++) {
-                counter++;
+                synchronized (TestThread.class){
+                    counter++;
+                }
                 log(threadName+":"+i+":"+counter);
             }
         }
