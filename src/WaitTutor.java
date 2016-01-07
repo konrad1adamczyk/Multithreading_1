@@ -62,7 +62,7 @@ public class WaitTutor {
 
     private void logAndCheckCounter(String threadName, int c) {
         log(threadName+":"+c);
-        if (counter != c) wrongCounter = true;
+        if (counter != c) wrongCounter = false;
         counterOccured++;
 
         if (counterOccured == threadsAmount) {
