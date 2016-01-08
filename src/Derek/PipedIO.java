@@ -5,10 +5,10 @@ package Derek;
  */
 //: c13:PipedIO.java
 // Using pipes for inter-thread I/O
-import org.junit.rules.Timeout;
-
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+import java.util.Random;
 
 class Sender extends Thread {
     private Random rand = new Random();
@@ -20,7 +20,7 @@ class Sender extends Thread {
             for(char c = 'A'; c <= 'z'; c++) {
                 try {
                     out.write(c);
-                    sleep(rand.nextInt(500));
+                    sleep(rand.nextInt(1000));
                 } catch(Exception e) {
                     throw new RuntimeException(e);
                 }
