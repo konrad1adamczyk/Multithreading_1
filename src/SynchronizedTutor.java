@@ -7,8 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 public class SynchronizedTutor {
     static StringBuffer buf = new StringBuffer();
-    Integer counter = 0;
-
+//    Integer counter = 0;
+        volatile Integer counter = 0;
 
     static void log(String s) {
         buf.append(s+"\n");
@@ -24,7 +24,10 @@ public class SynchronizedTutor {
         @Override
         public void run() {
             for (int i=0;i<1000;i++) {
-                synchronized (TestThread.class){
+//                synchronized (TestThread.class) // alternatywna wersja według Wiktora
+//                synchronized (buf)
+                synchronized (counter)
+                {
                     counter++;
                 }
                 log(threadName+":"+i+":"+counter);

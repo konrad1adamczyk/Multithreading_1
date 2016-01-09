@@ -47,8 +47,10 @@ public class PipedReaderWriterTutor {
         }
         new Thread(new PipeWriterThread()).start();
         new Thread(new PipeReaderThread()).start();
-
+        Thread.sleep(10);
+//        wait(5000);
         assertEquals(TEST_LINE, pipeReaderResult);
+
     }
 
 }
