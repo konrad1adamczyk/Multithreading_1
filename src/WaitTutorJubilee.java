@@ -25,7 +25,7 @@ public class WaitTutorJubilee {
         @Override
         public void run() {
             for (int i=0;i<100;i++) {
-                logAndCheckCounter(threadName, i);
+//                logAndCheckCounter(threadName, i);
                 synchronized(monitor) {
                     if (n==1) t1Counter = i;
                     if (n==2) t2Counter = i;
@@ -44,6 +44,7 @@ public class WaitTutorJubilee {
                                 monitor.wait();
                             }
                         }
+                        logAndCheckCounter(threadName, i); //tutaj
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

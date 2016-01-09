@@ -22,7 +22,8 @@ public class DeadlockTutor {
             balance -= amount;
         }
 
-        synchronized void deposit(double amount){
+        //synchronized
+        void deposit(double amount){
             balance += amount;
         }
 
@@ -44,6 +45,7 @@ public class DeadlockTutor {
                 }
             }
         });
+
         t2 = new Thread(new Runnable() {
             @Override
             public void run() {

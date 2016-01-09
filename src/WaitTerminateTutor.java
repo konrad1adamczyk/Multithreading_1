@@ -63,7 +63,7 @@ public class WaitTerminateTutor {
                 }
                 testThread1.shouldTerminate=true;
                 // comment this line out and execute
-                //testThread2.shouldTerminate=true;
+                testThread2.shouldTerminate=true;
             }
         });
         terminator.start();
